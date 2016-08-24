@@ -4,6 +4,7 @@ API_ENDPOINT = "http://shopicruit.myshopify.com/products.json?page="
 current_page = 1
 products = []
 loop do
+  puts "Endpoint hit: #{API_ENDPOINT}#{current_page}"
   uri = URI("#{API_ENDPOINT}#{current_page}")
   response = Net::HTTP.get(uri)
   json = JSON.parse(response)
